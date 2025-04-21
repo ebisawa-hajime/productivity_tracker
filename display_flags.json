@@ -1,0 +1,12 @@
+{
+  "Code.exe": true,
+  "chrome.exe": true,
+  "explorer.exe": true,
+  "notepad.exe": true,
+  "Teams.exe": true,
+  "OUTLOOK.EXE": true,
+  "python.exe": false,
+  "Notion.exe": true,
+  "Unknown": false,
+  "WindowsTerminal.exe": false
+}

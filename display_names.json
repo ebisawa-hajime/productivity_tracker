@@ -3,9 +3,10 @@
   "chrome.exe": "Google Chrome",
   "explorer.exe": "Explorer",
   "notepad.exe": "メモ帳",
-  "powershell.exe": "PowerShell",
-  "cmd.exe": "コマンドプロンプト",
   "Teams.exe": "Microsoft Teams",
-  "Slack.exe": "Slack",
-  "OUTLOOK.EXE": "Outlook"
+  "OUTLOOK.EXE": "Outlook",
+  "python.exe": "python.exe",
+  "Notion.exe": "Notion",
+  "Unknown": "Unknown",
+  "WindowsTerminal.exe": "WindowsTerminal.exe"
 }

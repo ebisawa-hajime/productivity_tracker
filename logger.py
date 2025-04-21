@@ -3,12 +3,12 @@ import os
 from datetime import datetime
 
 class Logger:
-    def __init__(self, save_dir="logs", settings_file="settings.json", name_map_file="display_names.json"):
-        os.makedirs(save_dir, exist_ok=True)
-        self.save_dir = save_dir
-        self.filename = os.path.join(save_dir, datetime.now().strftime("%Y-%m-%d") + ".json")
-        self.settings_file = settings_file
-        self.name_map_file = name_map_file
+    def __init__(self):
+        today = datetime.today().strftime("%Y-%m-%d")
+        self.filename = f"logs/{today}.json"
+        self.settings_path = "settings.json"
+        self.name_map_path = "display_names.json"
+        self.display_flags_path = "display_flags.json"
 
     def load_log(self):
         if os.path.exists(self.filename):
@@ -16,26 +16,37 @@ class Logger:
                 return json.load(f)
         return {}
 
-    def save_log(self, log):
+    def save_log(self, data):
+        os.makedirs("logs", exist_ok=True)
         with open(self.filename, "w", encoding="utf-8") as f:
-            json.dump(log, f, ensure_ascii=False, indent=2)
+            json.dump(data, f, indent=2, ensure_ascii=False)
 
     def load_settings(self):
-        if os.path.exists(self.settings_file):
-            with open(self.settings_file, "r", encoding="utf-8") as f:
+        if os.path.exists(self.settings_path):
+            with open(self.settings_path, "r", encoding="utf-8") as f:
                 return json.load(f)
         return {}
 
     def save_settings(self, settings):
-        with open(self.settings_file, "w", encoding="utf-8") as f:
-            json.dump(settings, f, ensure_ascii=False, indent=2)
-            
+        with open(self.settings_path, "w", encoding="utf-8") as f:
+            json.dump(settings, f, indent=2, ensure_ascii=False)
+
     def load_name_map(self):
-        if os.path.exists(self.name_map_file):
-            with open(self.name_map_file, "r", encoding="utf-8") as f:
+        if os.path.exists(self.name_map_path):
+            with open(self.name_map_path, "r", encoding="utf-8") as f:
                 return json.load(f)
         return {}
 
     def save_name_map(self, name_map):
-        with open(self.name_map_file, "w", encoding="utf-8") as f:
-            json.dump(name_map, f, ensure_ascii=False, indent=2)
+        with open(self.name_map_path, "w", encoding="utf-8") as f:
+            json.dump(name_map, f, indent=2, ensure_ascii=False)
+
+    def save_display_flags(self, flags):
+        with open(self.display_flags_path, "w", encoding="utf-8") as f:
+            json.dump(flags, f, indent=2, ensure_ascii=False)
+
+    def load_display_flags(self):
+        if os.path.exists(self.display_flags_path):
+            with open(self.display_flags_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return {}
