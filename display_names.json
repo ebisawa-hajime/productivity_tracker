@@ -1,0 +1,11 @@
+{
+  "Code.exe": "VSCode",
+  "chrome.exe": "Google Chrome",
+  "explorer.exe": "Explorer",
+  "notepad.exe": "メモ帳",
+  "powershell.exe": "PowerShell",
+  "cmd.exe": "コマンドプロンプト",
+  "Teams.exe": "Microsoft Teams",
+  "Slack.exe": "Slack",
+  "OUTLOOK.EXE": "Outlook"
+}

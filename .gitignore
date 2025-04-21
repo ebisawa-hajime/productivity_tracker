@@ -1,0 +1,15 @@
+# 仮想環境
+.venv/
+# PyInstaller ビルド生成物
+build/
+dist/
+*.spec
+# IDE関連
+.vscode/
+__pycache__/
+*.pyc
+# 実行ファイル
+*.exe
+# ログ・設定など
+logs/
+settings.json
